@@ -2,15 +2,26 @@
 <html>
 <body>
 
-<ul>
-  {% for x in emptytestobject %}
-    <li>{{ x.firstname }}</li>
-  {% empty %}
-    <li>No members</li>
-  {% endfor %}
-</ul> 
+<p>The queryset object:</p>
 
-<p>In views.py you can see the emptytestobject.</p>
+{{ mymembers }}
+
+<p>Loop through the items:</p>
+
+<table border='1'>
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  {% for x in mymembers %}
+    <tr>
+      <td>{{ x.id }}</td>
+      <td>{{ x.firstname }}</td>
+      <td>{{ x.lastname }}</td>
+    </tr>
+  {% endfor %}
+</table>
 
 </body>
 </html> 

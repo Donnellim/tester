@@ -24,8 +24,9 @@ def main(request):
 
 
 def testing(request):
+  mydata = Member.objects.filter(firstname='Don').values()
   template = loader.get_template('template.html')
   context = {
-    'emptytestobject': [],
+    'mymembers': mydata,
   }
   return HttpResponse(template.render(context, request))
