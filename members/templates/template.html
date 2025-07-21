@@ -2,11 +2,15 @@
 <html>
 <body>
 
-{% for x in fruits %}
-  <h1>{{ x }}</h1>
-{% endfor %}
+<ul>
+  {% for x in emptytestobject %}
+    <li>{{ x.firstname }}</li>
+  {% empty %}
+    <li>No members</li>
+  {% endfor %}
+</ul> 
 
-<p>In views.py you can see what the fruits variable looks like.</p>
+<p>In views.py you can see the emptytestobject.</p>
 
 </body>
-</html>
+</html> 
